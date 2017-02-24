@@ -114,7 +114,12 @@ module MetaInspector
       @document ||= if !allow_non_html_content && !content_type.nil? && content_type != 'text/html'
         fail MetaInspector::NonHtmlError.new "The url provided contains #{content_type} content instead of text/html content"
       else
-        @request.read
+        begin
+          @request.read
+        rescue ArgumentError => e
+          body = response.body.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8')
+          body.tr("\000", '') if body
+        end
       end
     end
   end
