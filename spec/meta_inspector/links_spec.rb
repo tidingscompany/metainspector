@@ -145,6 +145,13 @@ describe MetaInspector do
     end
   end
 
+  describe 'Relative links with empty or blank base' do
+    it 'should get the relative links from a document' do
+      m = MetaInspector.new('http://relativewithemptybase.com/company')
+      expect(m.links.internal).to eq(['http://relativewithemptybase.com/about', 'http://relativewithemptybase.com/sitemap'])
+    end
+  end
+
   describe 'Relative links with base' do
     it 'should get the relative links from a document' do
       m = MetaInspector.new('http://relativewithbase.com/company/page2')
@@ -154,6 +161,26 @@ describe MetaInspector do
     it 'should get the relative links from a directory' do
       m = MetaInspector.new('http://relativewithbase.com/company/page2/')
       expect(m.links.internal).to eq(['http://relativewithbase.com/about', 'http://relativewithbase.com/sitemap'])
+    end
+  end
+
+  describe 'Relative links with relative base' do
+    it 'should get the relative links with relative directory base' do
+      m = MetaInspector.new('http://relativewithrelativebase.com/relativedir')
+      expect(m.links.all).to eq(['http://relativewithrelativebase.com/other/about',
+                                 'http://relativewithrelativebase.com/sitemap'])
+    end
+
+    it 'should get the relative links with relative document base' do
+      m = MetaInspector.new('http://relativewithrelativebase.com/relativedoc')
+      expect(m.links.all).to eq(['http://relativewithrelativebase.com/about',
+                                 'http://relativewithrelativebase.com/sitemap'])
+    end
+
+    it 'should get the relative links with relative root base' do
+      m = MetaInspector.new('http://relativewithrelativebase.com/')
+      expect(m.links.all).to eq(['http://relativewithrelativebase.com/about',
+                                 'http://relativewithrelativebase.com/sitemap'])
     end
   end
 

@@ -1,4 +1,5 @@
-# MetaInspector [![Build Status](https://secure.travis-ci.org/jaimeiniesta/metainspector.png)](http://travis-ci.org/jaimeiniesta/metainspector) [![Code Climate](https://codeclimate.com/github/jaimeiniesta/metainspector/badges/gpa.svg)](https://codeclimate.com/github/jaimeiniesta/metainspector)
+# MetaInspector
+[![Gem Version](https://badge.fury.io/rb/metainspector.svg)](http://badge.fury.io/rb/metainspector) [![Build Status](https://secure.travis-ci.org/jaimeiniesta/metainspector.png)](http://travis-ci.org/jaimeiniesta/metainspector) [![SemVer](https://api.dependabot.com/badges/compatibility_score?dependency-name=metainspector&package-manager=bundler&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=metainspector&package-manager=bundler&version-scheme=semver) [![Code Climate](https://codeclimate.com/github/jaimeiniesta/metainspector/badges/gpa.svg)](https://codeclimate.com/github/jaimeiniesta/metainspector) [![Mentioned in Awesome Ruby](https://awesome.re/mentioned-badge.svg)](https://github.com/markets/awesome-ruby)
 
 MetaInspector is a gem for web scraping purposes.
 
@@ -21,6 +22,8 @@ If you're using it on a Rails application, just add it to your Gemfile and run `
 ```ruby
 gem 'metainspector'
 ```
+
+Supported Ruby versions are defined in [`.travis.yml`](.travis.yml).
 
 ## Usage
 

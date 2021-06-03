@@ -1,5 +1,18 @@
 # MetaInpector Changelog
 
+## [Changes in 5.11.0](https://github.com/jaimeiniesta/metainspector/compare/v5.10.1...v5.11.0)
+
+* Upgrade to Faraday 1.1.
+
+## [Changes in 5.10.1](https://github.com/jaimeiniesta/metainspector/compare/v5.10.0...v5.10.1)
+
+* Fix for empty base_href. Makes relative links work when base_href is nil but empty ("").
+* Drop support for Ruby 2.4, add support for Ruby 2.7.
+
+## [Changes in 5.10](https://github.com/jaimeiniesta/metainspector/compare/v5.9.0...v5.10.0)
+
+* Upgrade to Faraday 1.0.
+
 ## [Changes in 5.9](https://github.com/jaimeiniesta/metainspector/compare/v5.8.0...v5.9.0)
 
 * Added #feeds method to retrieve all feeds of a page.
